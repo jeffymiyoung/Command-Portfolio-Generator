@@ -16,6 +16,7 @@ const promptUser = () => {
                     return true;
                 } else {
                     console.log('Please enter your Name!');
+                    return false;
                 }
             }
         },
@@ -28,6 +29,7 @@ const promptUser = () => {
                     return true;
                 } else {
                     console.log('Please enter your GitHub Username!');
+                    return false;
                 }
             }
         },
@@ -45,6 +47,7 @@ const promptUser = () => {
                 if (confirmAbout) {
                     return true;
                 } else {
+                    console.log('Please enter some information about yourself!');
                     return false;
                 }
             }
@@ -75,6 +78,7 @@ const promptProject = portfolioData => {
                     return true;
                 } else {
                     console.log('Please enter a Project Name!');
+                    return false;
                 }
             }
         },
@@ -87,6 +91,7 @@ const promptProject = portfolioData => {
                     return true;
                 } else {
                     console.log('Please enter a Description for your Project!');
+                    return false;
                 }
             }
         },
@@ -105,6 +110,7 @@ const promptProject = portfolioData => {
                     return true;
                 } else {
                     console.log('Please enter a valid GitHub Repo Link!');
+                    return false;
                 }
             }
         },
@@ -134,11 +140,12 @@ const promptProject = portfolioData => {
 promptUser()
     .then(promptProject)
     .then(portfolioData => {
-        console.log(portfolioData);
+        const pageHTML = generatePage(portfolioData);
+
+        fs.writeFile('./index.html', pageHTML, err => {
+            if (err) throw new Error(err);
+
+            console.log('Portfolio complete! Check out index.html to see the output!');
+        });
     });
 
-// fs.writeFile('./index.html', pageHTML, err => {
-//     if (err) throw err;
-
-//     console.log('Portfolio complete! Check out index.html to see the output!');
-// });
