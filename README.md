@@ -21,7 +21,7 @@ Want to make a quick generated Portfolio that's fully styled and ready to go? Ju
 ## Screenshot:
 Example Output Screenshot ~
 
-![This is an example screenshot of the Node Generated Portfolio Page ~ Input your specific information to have one created for you!](./images/example%20screenshot.JPG);
+![This is an example screenshot of the Node Generated Portfolio Page ~ Input your specific information to have one created for you!](./images/example%20screenshot.JPG)
 
 ## Author(s):
 * Jeffrey Young
